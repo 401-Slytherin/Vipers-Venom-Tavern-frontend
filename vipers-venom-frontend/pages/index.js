@@ -1,12 +1,16 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-    <p>First commit!</p>
+
+    <Header />
+
+    <p>Content</p>
+
+    <Footer />
+
     </>
   )
 }
