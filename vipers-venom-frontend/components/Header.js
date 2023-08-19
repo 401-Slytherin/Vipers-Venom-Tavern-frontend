@@ -2,9 +2,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header
-      className="bg-cover bg-center bg-wood-pattern text-white py-20 flex justify-between items-center"
-    >
+    <header className="bg-cover bg-center bg-wood-pattern text-white py-20 flex justify-between items-center">
       <div className="text-center">
         <Image className="pl-10"
           src="/cobra.png"
