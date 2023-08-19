@@ -1,11 +1,11 @@
 import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 export default function Main() {
   return(
     <main>
-    
-      <h1>Hello World!</h1>
       <LoginForm/>
+      <RegisterForm/>
     </main>
   );
 }
