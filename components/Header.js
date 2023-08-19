@@ -2,24 +2,27 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="bg-cover bg-center bg-wood-pattern text-white py-20 flex justify-between items-center">
-      <div className="text-center">
-        <Image className="pl-10"
+    <header className="bg-cover bg-center bg-wood-pattern text-white py-10 px-6 flex items-center">
+      {/* Logo Image */}
+      <div className="w-64 h-16">
+        <Image
           src="/cobra.png"
           alt="Vipers venom logo"
+          layout="responsive"
           objectFit="cover"
-          width={500}
-          height={100}
+          width={64}
+          height={64}
         />
-        <h1 className="text-4xl pl-20 font-bold font-sans">Viper's Venom Tavern</h1>
-        <p className="text-lg"></p>
       </div>
-      <div className="space-x-4 pr-10">
+
+      <h1 className="text-4xl flex-1 text-center font-bold font-sans">Viper's Venom Tavern</h1>
+      <div className="space-x-4">
         <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
           Sign Up
         </button>
-        <button className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded">
-          Log In
+
+        <button className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">
+          Sign Up
         </button>
       </div>
     </header>
