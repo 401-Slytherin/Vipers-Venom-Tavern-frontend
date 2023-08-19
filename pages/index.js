@@ -7,6 +7,9 @@ import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
 import ActiveLink from '@/hooks/router'
+// import { Inter } from 'next/font/google'
+import SellPage from '@/components/SellPage'
+import ProfilePage from '@/components/ProfilePage'
 
 
 export default function Home() {
@@ -61,6 +64,7 @@ export default function Home() {
       user={user}
        />
       <Footer/>
+      <ProfilePage/>
     </>
   );
 }
