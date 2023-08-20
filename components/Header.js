@@ -10,21 +10,20 @@ export default function Header({
   seeSignup,
 }) {
   return (
-    <header className="bg-cover bg-center bg-wood-pattern text-white py-20 flex justify-between items-center">
-      <div className="text-center">
+    <header className="bg-cover bg-center bg-wood-pattern text-white py-10 px-6 flex items-center">
+      {/* Logo Image */}
+      <div className="w-64 h-16">
         <Image
-          className="pl-10"
           src="/cobra.png"
           alt="Vipers venom logo"
+          layout="responsive"
           objectFit="cover"
-          width={500}
-          height={100}
+          width={64}
+          height={64}
         />
-        <h1 className="text-4xl pl-20 font-bold font-sans">
-          Viper's Venom Tavern
-        </h1>
-        <p className="text-lg"></p>
       </div>
+
+      <h1 className="text-4xl flex-1 text-center font-bold font-sans">Viper's Venom Tavern</h1>
       <div className="space-x-4 pr-10">
         {!seeLogin && !seeSignup ? (
           <>
