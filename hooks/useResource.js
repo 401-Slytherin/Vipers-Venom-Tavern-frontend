@@ -23,7 +23,7 @@ export default function useResource() {
 
             const responseJSON = await response.json();
 
-            // console.table(responseJSON);
+            console.table(responseJSON);
 
             return responseJSON;
 
