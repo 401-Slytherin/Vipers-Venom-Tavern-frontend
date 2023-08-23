@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ActiveLink from "@/hooks/router";
 import LoginForm from "./LoginForm";
 
@@ -14,7 +13,7 @@ export default function Header({
       {/* Logo Image */}
       <div className="w-64 h-16">
         <Image
-          src="/cobra.png"
+          src="/python.png"
           alt="Vipers venom logo"
           layout="responsive"
           objectFit="cover"
