@@ -2,17 +2,18 @@
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
-export default function Main({ seeLogin, seeSignup }) {
+export default function Main({ user, register, login, seeLogin, seeSignup }) {
   return (
     <main>
-      {seeLogin || seeSignup ? (
-        <>
-          {seeLogin && <LoginForm />}
-          {seeSignup && <RegisterForm />}
-        </>
-      ) : (
-
-        <>
+      {user ?
+        <h1>Logged In! Welcome {user.username}</h1>
+        : seeLogin || seeSignup ? (
+          <>
+            {seeLogin && <LoginForm login={login} />}
+            {seeSignup && <RegisterForm register={register}/>}
+          </>
+        ) : (
+          <>
 
           <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <div className="border-4 border-red-500 p-4 bg-white rounded-lg shadow-lg mb-4">
@@ -42,7 +43,8 @@ export default function Main({ seeLogin, seeSignup }) {
 
 
         </>
-      )}
+        )
+      }
     </main>
   );
 }

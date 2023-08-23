@@ -50,12 +50,6 @@ export default function Home() {
         <title>Viper's Venom</title>
       </Head>
 
-      {/* Note: Brenden working off this uncommented section, need to give About a home
-      <Header />
-      <NavBar />
-      <About />
-      <Main /> */}
-
       <Header
         user={user}
         logout={logout}
@@ -69,9 +63,11 @@ export default function Home() {
         seeLogin={seeLogin}
         seeSignup={seeSignup}
         user={user}
-      />
-      {/* <ProfilePage /> */}
-      <Footer />
+        login={login}
+        register={register}
+       />
+      {/* <ProfilePage/> */}
+      <Footer/>
     </>
   );
 }
