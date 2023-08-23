@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import React from "react";
-import NavBar2 from "./NavBar2";
-import Header from "./Header";
-import Footer from "./Footer";
+import NavBar2 from '@/components/NavBar2';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 export default function BuyPage() {

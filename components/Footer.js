@@ -1,4 +1,5 @@
 import { FaGithub } from 'react-icons/fa';
+import Link from "next/link";
 
 export default function Footer() {
   return(
@@ -10,10 +11,11 @@ export default function Footer() {
         <nav className="bg-black text-white p-4">
           <ul className="flex justify-between space-x-4 pr-20">
             <li className="flex space-x-4">
-              <a href="#" className="hover:text-gray-500">Buy</a>
-              <a href="#" className="hover:text-gray-500">Sell</a>
-              <a href="#" className="hover:text-gray-500">Trade</a>
-              <a href="#" className="hover:text-gray-500">About</a>
+              <Link href="/" className="hover:text-gray-500">Home</Link>
+              <Link href="/buy" className="hover:text-gray-500">Buy</Link>
+              <Link href="/sell" className="hover:text-gray-500">Sell</Link>
+              {/* <Link href="tradepage" className="hover:text-yellow-100">Trade</Link> */}
+              <Link href="/about" className="hover:text-gray-500">About</Link>
             </li>
           </ul>
         </nav>

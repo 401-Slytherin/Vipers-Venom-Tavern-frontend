@@ -8,7 +8,7 @@ export default function Header() {
     <header className="bg-cover bg-center bg-wood-pattern text-white py-20 flex justify-between items-center">
       <div className="text-center">
         <Image className="pl-10"
-          src="/cobra.png"
+          src="/python.png"
           alt="Vipers venom logo"
           objectFit="cover"
           width={500}

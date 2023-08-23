@@ -1,11 +1,17 @@
-import React from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import Footer from "./Footer";
+// import React from "next/react";
+import Header from "@/components//Header";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 
 export default function SellPage() {
   return (
+
+    <>
+
+    <Header />
+    <NavBar />
+
     <div className="body">
       <div className="form-container">
         <form>
@@ -58,6 +64,10 @@ export default function SellPage() {
         </form>
       </div>
     </div>
+
+    <Footer />
+
+    </>
 
   );
 };

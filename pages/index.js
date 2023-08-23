@@ -5,7 +5,6 @@ import Head from 'next/head'
 import Header from '@/components/Header'
 import NavBar from '@/components/NavBar'
 import Main from '@/components/Main'
-import About from '@/components/About'
 import Footer from '@/components/Footer'
 import ActiveLink from '@/hooks/router'
 import SellPage from '@/components/SellPage'
@@ -14,14 +13,14 @@ import ProfilePage from '@/components/ProfilePage'
 
 export default function Home() {
 
-  const [seeLogin, setSeeLogin ] = useState(false);
+  const [seeLogin, setSeeLogin] = useState(false);
   const [seeSignup, setSeeSignup] = useState(false);
 
 
   function handleLoginClick(e) {
     e.preventDefault();
-    
-    if (!seeLogin || (!seeLogin && seeSignup)){
+
+    if (!seeLogin || (!seeLogin && seeSignup)) {
       setSeeLogin((seeLogin) => true)
       setSeeSignup((seeSigup) => false)
     }
@@ -30,12 +29,12 @@ export default function Home() {
 
   function handleSignupClick(e) {
     e.preventDefault();
-    
-    if (!seeSignup || (!seeSignup && seeLogin)){
+
+    if (!seeSignup || (!seeSignup && seeLogin)) {
       setSeeLogin((seeLogin) => false)
       setSeeSignup((seeSigup) => true)
     }
-     
+
     console.log(seeSignup)
   }
 
@@ -47,30 +46,25 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel='icon' href='../public/favicon.ico'/>
+        <link rel='icon' href='../public/favicon.ico' />
         <title>Viper's Venom</title>
       </Head>
-    
-{/*    Note: Brenden working off this uncommented section, need to give About a home
-       <Header/>
-       <NavBar />
-       <About />
-       <Main/> */}
 
-      <Header 
-        user ={user}
-        logout = {logout} 
-        handleLogin = {handleLoginClick} 
-        handleSignup = {handleSignupClick}
+      <Header
+        user={user}
+        logout={logout}
+        handleLogin={handleLoginClick}
+        handleSignup={handleSignupClick}
         seeLogin={seeLogin}
         seeSignup={seeSignup}
-        />
+      />
+      <NavBar />
       <Main
-      seeLogin={seeLogin}
-      seeSignup={seeSignup}
-      user={user}
-      login={login}
-      register={register}
+        seeLogin={seeLogin}
+        seeSignup={seeSignup}
+        user={user}
+        login={login}
+        register={register}
        />
       {/* <ProfilePage/> */}
       <Footer/>
