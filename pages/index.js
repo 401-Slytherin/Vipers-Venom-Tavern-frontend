@@ -70,6 +70,7 @@ export default function Home() {
       seeSignup={seeSignup}
       user={user}
       login={login}
+      register={register}
        />
       {/* <ProfilePage/> */}
       <Footer/>
