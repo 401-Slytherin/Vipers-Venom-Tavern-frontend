@@ -16,6 +16,7 @@ export default function CardsList({cards}) {
           yearSet={card.year_set}
           cardNum={card.card_num}
           promo={card.promotional}
+          category={card.category}
           />
         )
       })
