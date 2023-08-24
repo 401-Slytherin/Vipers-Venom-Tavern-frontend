@@ -7,7 +7,6 @@ import NavBar from '@/components/NavBar'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
 import ActiveLink from '@/hooks/router'
-import SellPage from '@/components/SellPage'
 import ProfilePage from '@/components/ProfilePage'
 
 
@@ -58,7 +57,9 @@ export default function Home() {
         seeLogin={seeLogin}
         seeSignup={seeSignup}
       />
-      <NavBar />
+      <NavBar 
+        user={user}
+      />
       <Main
         seeLogin={seeLogin}
         seeSignup={seeSignup}
@@ -67,7 +68,9 @@ export default function Home() {
         register={register}
        />
       {/* <ProfilePage/> */}
-      <Footer/>
+      <Footer
+        user={user}
+      />
     </>
   );
 }
