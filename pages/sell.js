@@ -2,15 +2,19 @@
 import Header from "@/components//Header";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { useAuth } from "@/context/auth";
 
 
 export default function SellPage() {
+
+  const { user } = useAuth();
+
   return (
 
     <>
 
     <Header />
-    <NavBar />
+    <NavBar user={user} />
 
     <div className="body">
       <div className="form-container">
