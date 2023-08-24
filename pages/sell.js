@@ -1,18 +1,26 @@
 // import React from "next/react";
 import Header from "@/components//Header";
 import NavBar from "@/components/NavBar";
+import Main3 from "@/components/Main3";
 import Footer from "@/components/Footer";
+import useResource from "@/hooks/useResource";
+import { useAuth } from "@/context/auth";
 
 
 export default function SellPage() {
+
+  const { user } = useAuth();
+  const { createResource } = useResource();
+
   return (
 
     <>
 
     <Header />
-    <NavBar />
-
-    <div className="body">
+    {user && <NavBar />} 
+    <Main3 createSellCard={createResource}
+    user={user} />
+    {/* <div className="body">
       <div className="form-container">
         <form>
           <div class="relative z-0 w-full mb-6 group">
@@ -63,7 +71,7 @@ export default function SellPage() {
           </div>
         </form>
       </div>
-    </div>
+    </div> */}
 
     <Footer />
 
