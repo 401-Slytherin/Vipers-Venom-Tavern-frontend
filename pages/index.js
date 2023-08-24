@@ -40,10 +40,13 @@ export default function Home() {
     console.log(seeSignup)
   }
 
+  function handleLogoutClick(e) {
+    logout()
+  }
 
   
 
-
+  
   return (
     <>
       <Head>
@@ -53,7 +56,7 @@ export default function Home() {
 
       <Header
         user={user}
-        logout={logout}
+        logout={handleLogoutClick}
         handleLogin={handleLoginClick}
         handleSignup={handleSignupClick}
         seeLogin={seeLogin}
