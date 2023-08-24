@@ -15,6 +15,8 @@ export default function Home() {
 
   const [seeLogin, setSeeLogin] = useState(false);
   const [seeSignup, setSeeSignup] = useState(false);
+  const { user, login, logout, register } = useAuth();
+  const { resources, deleteResource, createResource } = useResource();
 
 
   function handleLoginClick(e) {
@@ -39,8 +41,7 @@ export default function Home() {
   }
 
 
-  const { user, login, logout, register } = useAuth();
-  const { resources, deleteResource, createResource } = useResource();
+  
 
 
   return (
@@ -58,7 +59,7 @@ export default function Home() {
         seeLogin={seeLogin}
         seeSignup={seeSignup}
       />
-      <NavBar />
+      <NavBar user={user}/>
       <Main
         seeLogin={seeLogin}
         seeSignup={seeSignup}
