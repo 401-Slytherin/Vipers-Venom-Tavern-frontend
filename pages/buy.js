@@ -1,15 +1,22 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from "react";
-import NavBar2 from '@/components/NavBar2';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import NavBar2 from "@/components/NavBar2"
+import Header from "@/components/Header";
+import Main2 from '@/components/Main2';
+import Footer from "@/components/Footer";
+import useResource from '@/hooks/useResource';
+
 
 
 export default function BuyPage() {
+
+  const { resources } = useResource();
+
   return (
-    <div>
+    <>
       <Header />
       <NavBar2 />
+    
       <div className="flex flex-wrap justify-center">
         {/* First Card */}
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 my-4">
@@ -117,5 +124,10 @@ export default function BuyPage() {
       </div>
       <Footer />
     </div>
+
+      <Main2 cards={resources || []} />
+      <p>Placeholder</p>
+      <Footer />  
+    </>
   );
 };
