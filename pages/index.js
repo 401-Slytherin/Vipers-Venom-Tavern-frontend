@@ -7,8 +7,6 @@ import NavBar from '@/components/NavBar'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
 import ActiveLink from '@/hooks/router'
-import SellPage from '@/components/SellPage'
-import ProfilePage from '@/components/ProfilePage'
 
 
 export default function Home() {
@@ -38,11 +36,14 @@ export default function Home() {
     console.log(seeSignup)
   }
 
+  function handleLogoutClick(e) {
+    logout()
+  }
 
   const { user, login, logout, register } = useAuth();
   const { resources, deleteResource, createResource } = useResource();
 
-
+  
   return (
     <>
       <Head>
@@ -52,7 +53,7 @@ export default function Home() {
 
       <Header
         user={user}
-        logout={logout}
+        logout={handleLogoutClick}
         handleLogin={handleLoginClick}
         handleSignup={handleSignupClick}
         seeLogin={seeLogin}

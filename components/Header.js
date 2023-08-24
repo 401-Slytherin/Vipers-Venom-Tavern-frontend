@@ -1,19 +1,27 @@
-import Image from "next/image";
-import { useState } from "react";
-import ActiveLink from "@/hooks/router";
-import LoginForm from "./LoginForm";
+// import React, { useState } from 'react';
+import { useAuth } from '@/context/auth'; // Import useAuth
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router'; 
 
 export default function Header({
+  user, // user state from useAuth
+  logout, // logout function from useAuth
+  profilePage,
   handleLogin,
   handleSignup,
   seeLogin,
   seeSignup,
 }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const router = useRouter();
+
+  const goToProfile = () => {
+    router.push('/profile');
+  };
 
   return (
-    <header className="bg-cover bg-center bg-wood-pattern text-white py-10 px-6 flex items-center">
-      {/* Logo Image */}
+    <header className="bg-cover bg-center bg-wood-pattern text-white py-10 px-6 flex items-center justify-between">
       <div className="w-64 h-16">
         <Image
           src="/cobra.png"
@@ -24,26 +32,40 @@ export default function Header({
           height={64}
         />
       </div>
-
       <h1 className="text-4xl flex-1 text-center font-bold font-sans">
         Viper's Venom Tavern
       </h1>
       <div className="space-x-4 pr-10">
-        {isLoggedIn ? (
+        {user ? (
           <>
-            <button
-              className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded"
-            >
+            <button className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded"
+            onClick={goToProfile}>
               Profile
             </button>
             <button
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
-              onClick={() => setIsLoggedIn(false)}
+              onClick={logout} // Trigger logout
             >
               Log Out
             </button>
           </>
-        ) : !seeLogin && !seeSignup ? (
+        ) : seeLogin || seeSignup ? (
+          seeLogin ? (
+            <button
+              onClick={handleSignup}
+              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+            >
+              Sign Up
+            </button>
+          ) : (
+            <button
+              onClick={handleLogin}
+              className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded"
+            >
+              Log In
+            </button>
+          )
+        ) : (
           <>
             <button
               onClick={handleSignup}
@@ -58,20 +80,6 @@ export default function Header({
               Log In
             </button>
           </>
-        ) : seeLogin ? (
-          <button
-            onClick={handleSignup}
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
-          >
-            Sign Up
-          </button>
-        ) : (
-          <button
-            onClick={handleLogin}
-            className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded"
-          >
-            Log In
-          </button>
         )}
       </div>
     </header>
@@ -107,7 +115,6 @@ export default function Header({
 //           height={64}
 //         />
 //       </div>
-
 //       <h1 className="text-4xl flex-1 text-center font-bold font-sans">Viper's Venom Tavern</h1>
 //       <div className="space-x-4 pr-10">
 //         {!seeLogin && !seeSignup ? (
@@ -140,7 +147,7 @@ export default function Header({
 //             Log In
 //           </button>
 //         )}
-//       </div>
+//       </div>      
 //     </header>
 //   );
 // }
