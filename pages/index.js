@@ -71,7 +71,9 @@ export default function Home() {
         register={register}
        />
       {/* <ProfilePage/> */}
-      <Footer/>
+      <Footer
+        user={user}
+      />
     </>
   );
 }

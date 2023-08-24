@@ -17,7 +17,7 @@ export default function SellPage() {
     <>
 
     <Header />
-    {user && <NavBar />} 
+    <NavBar user={user} />
     <Main3 createSellCard={createResource}
     user={user} />
     {/* <div className="body">

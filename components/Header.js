@@ -24,7 +24,7 @@ export default function Header({
     <header className="bg-cover bg-center bg-wood-pattern text-white py-10 px-6 flex items-center justify-between">
       <div className="w-64 h-16">
         <Image
-          src="/cobra.png"
+          src="/python.png"
           alt="Vipers venom logo"
           layout="responsive"
           objectFit="cover"
