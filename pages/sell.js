@@ -80,8 +80,9 @@ export default function SellPage() {
       </div>
     </div> */}
 
-      <Footer />
-      </>
+    <Footer user={user}/>
+
+    </>
 
   );
 };

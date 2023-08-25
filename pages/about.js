@@ -1,14 +1,18 @@
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { useAuth } from "@/context/auth";
 
 export default function AboutUs() {
+
+  const { user } = useAuth();
+
   return (
 
     <>
 
       <Header />
-      <NavBar />
+      <NavBar user={user}/>
 
       <div className="flex justify-between items-center h-screen pl-10 pr-10 bg-gray-100">
 
@@ -94,7 +98,7 @@ export default function AboutUs() {
 
       </div>
 
-      <Footer />
+      <Footer user={user}/>
 
     </>
 

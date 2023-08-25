@@ -7,9 +7,7 @@ import Header from "@/components/Header";
 import Main2 from '@/components/Main2';
 import Footer from "@/components/Footer";
 import useResource from '@/hooks/useResource';
-
-
-
+import { useAuth } from "@/context/auth";
 
 export default function BuyPage() {
   
@@ -26,8 +24,8 @@ export default function BuyPage() {
       <Header user={user} logout={logout} />
       <NavBar2 />
     
-      <div className="flex flex-wrap justify-center">
-        {/* First Card */}
+      {/* <div className="flex flex-wrap justify-center">
+        First Card
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 my-4">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Card title goes here</h5>
@@ -58,7 +56,7 @@ export default function BuyPage() {
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
-        {/* Second Card */}
+        Second Card
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 my-4">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Card title goes here</h5>
@@ -85,17 +83,11 @@ export default function BuyPage() {
             >
               Wishlist
             </button>
-            {/* <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-            </a> */}
           </div>
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
-        {/* Third Card */}
+        Third Card
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 my-4">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Card title goes here</h5>
@@ -122,21 +114,15 @@ export default function BuyPage() {
             >
               Wishlist
             </button>
-            {/* <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-            </a> */}
           </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </div> */}
 
       <Main2 cards={resources || []} />
       <p>Placeholder</p>
-      <Footer />  
+      <Footer user={user}/>  
     </>
   );
 };
