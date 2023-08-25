@@ -15,7 +15,7 @@ export default function Footer({ user }) {
               {user ? (
                 <>
                   <Link href="/buy" className="hover:text-gray-500">Buy</Link>
-                  <Link href="/buy" className="hover:text-gray-500">Sell</Link>
+                  <Link href="/sell" className="hover:text-gray-500">Sell</Link>
                   <Link href="/about" className="hover:text-gray-500">About</Link>
                 </>
                 ) : (
