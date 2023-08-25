@@ -6,9 +6,6 @@ import Header from '@/components/Header'
 import NavBar from '@/components/NavBar'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
-import ActiveLink from '@/hooks/router'
-import SellPage from './sell'
-import ProfilePage from '@/components/ProfilePage'
 
 
 export default function Home() {
