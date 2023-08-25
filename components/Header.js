@@ -2,7 +2,7 @@
 import { useAuth } from '@/context/auth'; // Import useAuth
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
 
 export default function Header({
   user, // user state from useAuth
@@ -39,12 +39,15 @@ export default function Header({
         {user ? (
           <>
             <button className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded"
-            onClick={goToProfile}>
+              onClick={goToProfile}>
               Profile
             </button>
             <button
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
-              onClick={logout} // Trigger logout
+              onClick={() => {
+                logout(); 
+                router.push('/'); // Redirect to the main page
+              }}
             >
               Log Out
             </button>

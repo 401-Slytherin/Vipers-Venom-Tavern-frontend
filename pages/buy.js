@@ -1,14 +1,24 @@
 import Image from 'next/image';
 import React from "react";
-import NavBar2 from "./NavBar2";
-import Header from "./Header";
-import Footer from "./Footer";
+import NavBar2 from "@/components/NavBar2";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { useAuth } from '@/context/auth';
+import { useRouter } from 'next/router';
+
 
 
 export default function BuyPage() {
+  const { user, logout } = useAuth(); // Get user and logout function from useAuth
+  const router = useRouter(); // Get the router object
+
+  const goToProfile = () => {
+    router.push('/profile'); // Navigate to the profile page
+  };
+
   return (
     <div>
-      <Header />
+      <Header user={user} logout={logout} />
       <NavBar2 />
       <div className="flex flex-wrap justify-center">
         {/* First Card */}
