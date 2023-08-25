@@ -8,7 +8,7 @@ import Main from '@/components/Main'
 import Footer from '@/components/Footer'
 import ActiveLink from '@/hooks/router'
 import SellPage from './sell'
-import ProfilePage from '@/components/ProfilePage'
+// import ProfilePage from '@/components/ProfilePage'
 
 
 export default function Home() {
