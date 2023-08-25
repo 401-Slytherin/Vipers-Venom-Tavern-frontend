@@ -1,5 +1,7 @@
 // import Image from 'next/image';
 import React from "react";
+import { useAuth } from '@/context/auth';
+import { useRouter } from 'next/router';
 import NavBar2 from "@/components/NavBar2"
 import Header from "@/components/Header";
 import Main2 from '@/components/Main2';
@@ -7,16 +9,19 @@ import Footer from "@/components/Footer";
 import useResource from '@/hooks/useResource';
 import { useAuth } from "@/context/auth";
 
-
-
 export default function BuyPage() {
-
-  const { user } = useAuth();
+  
   const { resources } = useResource();
+  const { user, logout } = useAuth(); // Get user and logout function from useAuth
+  const router = useRouter(); // Get the router object
+
+  const goToProfile = () => {
+    router.push('/profile'); // Navigate to the profile page
+  };
 
   return (
     <>
-      <Header />
+      <Header user={user} logout={logout} />
       <NavBar2 />
     
       {/* <div className="flex flex-wrap justify-center">
