@@ -3,23 +3,30 @@ import Header from "@/components//Header";
 import NavBar from "@/components/NavBar";
 import Main3 from "@/components/Main3";
 import Footer from "@/components/Footer";
+import { useAuth } from '@/context/auth';
+import { useRouter } from 'next/router';
 import useResource from "@/hooks/useResource";
-import { useAuth } from "@/context/auth";
+
 
 
 export default function SellPage() {
 
-  const { user } = useAuth();
+  const router = useRouter(); // Get the router object
+  const { user, logout } = useAuth(); // Get user and logout function from useAuth
   const { createResource } = useResource();
 
+  const goToProfile = () => {
+    router.push('/profile'); // Navigate to the profile page
+  };
+  
   return (
-
     <>
-
-    <Header />
-    <NavBar user={user} />
-    <Main3 createSellCard={createResource}
-    user={user} />
+      <Header user={user} logout={logout} />
+    
+ 
+      <NavBar user={user} />
+      <Main3 createSellCard={createResource}
+       user={user} />
     {/* <div className="body">
       <div className="form-container">
         <form>
@@ -73,9 +80,8 @@ export default function SellPage() {
       </div>
     </div> */}
 
-    <Footer />
-
-    </>
+      <Footer />
+      </>
 
   );
 };
