@@ -121,7 +121,6 @@ export default function BuyPage() {
     </div> */}
 
       <Main2 cards={resources || []} />
-      <p>Placeholder</p>
       <Footer user={user}/>  
     </>
   );
