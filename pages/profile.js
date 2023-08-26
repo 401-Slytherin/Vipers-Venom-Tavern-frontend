@@ -60,7 +60,6 @@ export default function ProfilePage() {
     </div>
 
     <Footer user={user}/>
-
     </>
   );
 }
