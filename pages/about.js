@@ -19,6 +19,7 @@ export default function AboutUs() {
 
     <>
 
+
       <Header user={user} logout={logout}/>
       <NavBar user={user}/>
 

@@ -20,7 +20,7 @@ export default function Main({ user, register, login, seeLogin, seeSignup }) {
 
             <Image
               src="/d20.png"
-              alt="Vipers venom logo"
+              alt="D20 dice image"
               width={64}
               height={64}
             />
@@ -33,7 +33,7 @@ export default function Main({ user, register, login, seeLogin, seeSignup }) {
                 <li className="mb-2">How can I join?</li>
                 <p className="ml-6">A. To join the tavern, simply sign up on our website and become a member of our community.</p>
                 <li className="mb-2">How can I sell my cards?</li>
-                <p className="ml-6">A. Make sure you are signed up, click on the sell link, fill out some information, and your good to go! Your card will be up for sale in the buy page.</p>
+                <p className="ml-6">A. Make sure you are signed up, click on the sell link, fill out some information, and you're good to go! Your card will be up for sale in the buy page.</p>
               </ul>
             </div>
 
@@ -79,7 +79,7 @@ export default function Main({ user, register, login, seeLogin, seeSignup }) {
                   <li className="mb-2">How can I join?</li>
                   <p className="ml-6">A. To join the tavern, simply sign up on our website and become a member of our community.</p>
                   <li className="mb-2">How can I sell my cards?</li>
-                  <p className="ml-6">A. Make sure you are signed up, click on the sell link, fill out some information, and your good to go! Your card will be up for sale in the buy page.</p>
+                  <p className="ml-6">A. Make sure you are signed up, click on the sell link, fill out some information, and you're good to go! Your card will be up for sale in the buy page.</p>
                 </ul>
               </div>
 
