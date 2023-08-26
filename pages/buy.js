@@ -1,5 +1,6 @@
 // import Image from 'next/image';
 import React from "react";
+import { useAuth } from "@/context/auth";
 import { useRouter } from 'next/router';
 import NavBar from "@/components/NavBar"
 import Header from "@/components/Header";
