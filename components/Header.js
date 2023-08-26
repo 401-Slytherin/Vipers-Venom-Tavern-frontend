@@ -33,7 +33,7 @@ export default function Header({
         />
       </div>
       <h1 className="text-4xl flex-1 text-center font-bold font-sans">
-        Viper's Venom Tavern
+        Viper&apos;s Venom Tavern
       </h1>
       <div className="space-x-4 pr-10">
         {user ? (

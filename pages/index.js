@@ -1,11 +1,11 @@
 import { useAuth } from '@/context/auth'
 import useResource from "@/hooks/useResource";
 import { useState } from 'react'
-import Head from 'next/head'
-import Header from '@/components/Header'
-import NavBar from '@/components/NavBar'
-import Main from '@/components/Main'
-import Footer from '@/components/Footer'
+import Head from 'next/head';
+import Header from '@/components/Header';
+import NavBar from '@/components/NavBar';
+import Main from '@/components/Main';
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
     <>
       <Head>
         <link rel='icon' href='../public/favicon.ico' />
-        <title>Viper's Venom</title>
+        <title>Viper&apos;s Venom</title>
       </Head>
 
       <Header
