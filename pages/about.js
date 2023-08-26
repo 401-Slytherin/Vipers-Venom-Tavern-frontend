@@ -11,7 +11,7 @@ export default function AboutUs() {
 
     <>
 
-      <Header />
+      <Header user={user}/>
       <NavBar user={user}/>
 
       <div className="flex justify-between items-center h-screen pl-10 pr-10 bg-gray-100">

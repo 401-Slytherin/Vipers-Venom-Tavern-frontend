@@ -2,12 +2,11 @@
 import React from "react";
 import { useAuth } from '@/context/auth';
 import { useRouter } from 'next/router';
-import NavBar2 from "@/components/NavBar2"
+import NavBar from "@/components/NavBar"
 import Header from "@/components/Header";
 import Main2 from '@/components/Main2';
 import Footer from "@/components/Footer";
 import useResource from '@/hooks/useResource';
-import { useAuth } from "@/context/auth";
 
 export default function BuyPage() {
   
@@ -22,7 +21,7 @@ export default function BuyPage() {
   return (
     <>
       <Header user={user} logout={logout} />
-      <NavBar2 />
+      <NavBar user={user}/>
     
       {/* <div className="flex flex-wrap justify-center">
         First Card
