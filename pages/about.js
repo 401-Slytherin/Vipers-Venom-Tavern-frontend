@@ -2,16 +2,25 @@ import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/context/auth";
+import { useRouter } from 'next/router';
+
+
 
 export default function AboutUs() {
 
-  const { user } = useAuth();
+  const router = useRouter(); // Get the router object
+  const { user, logout } = useAuth();
+
+  const goToProfile = () => {
+    router.push('/profile'); // Navigate to the profile page
+  };
 
   return (
 
     <>
 
-      <Header />
+
+      <Header user={user} logout={logout}/>
       <NavBar user={user}/>
 
       <div className="flex justify-between items-center h-screen pl-10 pr-10 bg-gray-100">

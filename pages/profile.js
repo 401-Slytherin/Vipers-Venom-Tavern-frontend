@@ -1,23 +1,30 @@
+import { useAuth } from '@/context/auth';
+import Header from '@/components/Header';
+import NavBar from '@/components/NavBar';
+import Footer from '@/components/Footer';
 import UserSellingAccordion from "@/components/UserSellingAccordion";
 import WishlistAccordion from "@/components/WishlistAccordion";
 import useResource from "@/hooks/useResource";
-import { useAuth } from "@/context/auth";
-
-// import Image from 'next/image';
 
 export default function ProfilePage() {
 
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const { resources } = useResource();
-  console.table(resources)
 
   return (
-    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+    <>
+
+    <Header user={user} logout={logout} />
+    <NavBar user={user}/>
+
+
+    <div className="bg-gray-100 min-h-screen flex justify-center items-center p-4">
       <div className="max-w-2xl w-full px-4">
 
         {/* Section 1: Avatar and Username */}
-        <section className="bg-white p-8 mb-6 flex items-center">
-          <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-4">
+        <section className="flex justify-center border-4 border-orange-300 rounded bg-white mb-6 p-4">
+          <div className="flex justify-center relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 mr-4">
+
             <svg
               className="absolute w-12 h-12 text-gray-400 -left-1 top-0"
               fill="currentColor"
@@ -31,51 +38,34 @@ export default function ProfilePage() {
               ></path>
             </svg>
           </div>
-          <h1 className="text-2xl pl-6 font-semibold text-right">
-            Hello <span className="text-blue-500">username_goes_here</span>:
+          <h1 className="text-2xl font-semibold flex items-center pl-3">
+          <span className="text-blue-500"> {user.username}</span>:
           </h1>
         </section>
+        <div className='pl-10'>
+          <p className="mb-2">Name: John Doe</p>
+          <p className="mb-2">Email: john@example.com</p>
+          <p className="mb-2">Phone #: (123) 456-7890</p>
+        </div>
 
-        {/* <div className="mx-auto mb-2">
-            <Image
-              src="/profile_image"
-              alt="User_avatar_picture"
-              className="w-16 h-16 rounded-full mr-4"
-              width={40}
-              height={40}
-            />
-          </div> */}
-
-        {/* Section 2: Name, Email, and Phone */}
-        <section className="bg-white p-8 mb-6">
-          <h2 className="text-xl font-semibold mb-4">User Information:</h2>
-          <div>
-            <p>Name:</p>
-            <p>Email:</p>
-            <p>Phone #:</p>
-          </div>
-        </section>
-
-        {/* Section 3: Sold Products */}
-        <UserSellingAccordion user={user} cards={resources || []}/>
-        {/* <section className="bg-white p-8 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Sold Products:</h2>
-          <select className="border rounded-lg p-2 w-full">
+        {/* Section 2: Sold Products/wishlist */}
+       <section className="border-4 border-orange-300 rounded bg-white p-6">
+         <UserSellingAccordion user={user} cards={resources || []}/>
+          <WishlistAccordion />
+          {/* <h2 className="text-xl font-semibold mb-4 flex justify-center pt-4 ">Sold Products:</h2>
+          <select className="border rounded-lg p-4 w-full ">
             <option value="">Browse your sold products here...</option>
           </select>
-        </section> */}
-
-        
-
-        {/* Section 4: Wishlist */}
-        <WishlistAccordion />
-        {/* <section className="bg-white p-8">
-          <h2 className="text-xl font-semibold mb-4">Wishlist:</h2>
-          <select className="border rounded-lg p-2 w-full">
+          <h2 className="flex justify-center text-xl font-semibold pt-4 mb-6">Wishlist:</h2>
+          <select className="border rounded-lg p-4 w-full">
+          
             <option value="">Browse your wishlist products here...</option>
-          </select>
-        </section> */}
+          </select> */}
+        </section>
       </div>
     </div>
+
+    <Footer user={user}/>
+    </>
   );
-};
+}

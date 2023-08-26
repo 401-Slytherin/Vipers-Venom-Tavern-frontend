@@ -1,8 +1,7 @@
 // import Image from 'next/image';
 import React from "react";
-import { useAuth } from '@/context/auth';
 import { useRouter } from 'next/router';
-import NavBar2 from "@/components/NavBar2"
+import NavBar from "@/components/NavBar"
 import Header from "@/components/Header";
 import Main2 from '@/components/Main2';
 import Footer from "@/components/Footer";
@@ -21,7 +20,8 @@ export default function BuyPage() {
   return (
     <>
       <Header user={user} logout={logout} />
-      <NavBar2 />
+      <NavBar user={user}/>
+      {/*  <NavBar2 /> */}
       <Main2 cards={resources || []} />
       <Footer user={user}/>  
     </>
