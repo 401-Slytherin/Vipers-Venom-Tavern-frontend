@@ -1,13 +1,13 @@
 # Viper's Venom Tavern Frontend
 
-## Collaborators:
+### Collaborators:
 
 - Anthony Lopez
 - Araceli Garcia
 - Brenden Moore
 - Jeremy Adamson
 
-## Description:
+### Description:
 
 #### What is Viper's Venom Tavern?
 
@@ -23,8 +23,28 @@ To join the tavern, the user simply needs sign up on our website and become a me
 Making sure they are signed up, users will have to click on the sell link, fill out some information, and they are good to go! Their cards will be up for sale in the buy page.
 
 
-## Version:
+
+### Deployed website:
+
+https://vipers-venom-tavern-frontend.vercel.app/
+
+## Preliminary work:
 
 
-## Deployed website:
+### Wireframe:
 
+![wireframe_image](public/wireframe.jpg)
+
+
+### Domain Model:
+
+![domain_model](public/domain_model.jpg)
+
+
+### Database schema:
+
+![db_schema](public/db_schema.jpg)
+
+### Styling:
+
+![styling](public/styling.jpg)
