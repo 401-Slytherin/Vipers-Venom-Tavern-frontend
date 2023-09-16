@@ -39,7 +39,7 @@ export default function ProfilePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-semibold flex items-center pl-3">
-          <span className="text-blue-500"> {user.username}</span>:
+          {user && <span className="text-blue-500"> {user.username}</span>}
           </h1>
         </section>
         <div className='pl-10'>

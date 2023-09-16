@@ -60,7 +60,7 @@ export default function AboutUs() {
             <li class="mb-3 text-sm font-normal text-gray-400">Charisma</li>
 
 
-            <p class="mb-3 font-normal text-gray-500">Software developer who's passionate about developing quality, fun and appealing products. Pursuing a career in Python.</p>
+            <p class="mb-3 font-normal text-gray-500">Software developer who&apos;s passionate about developing quality, fun and appealing products. Pursuing a career in Python.</p>
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
           </div>
         </div>
