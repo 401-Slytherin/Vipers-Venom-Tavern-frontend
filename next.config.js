@@ -4,12 +4,13 @@ const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    domains: ['localhost'],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'localhost',
+        protocol: 'http',
+        hostname: '127.0.0.1',
         port: '8000',
-        pathname: '/cardapp/**',
+        pathname: '/cardapp/media/images/**',
       },
     ],
   },
