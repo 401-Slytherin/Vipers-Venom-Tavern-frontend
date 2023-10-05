@@ -26,18 +26,23 @@ export default function CardsList({ cards }) {
 }
 
 function Card({ name, image, price, condition, description, yearSet, cardNum, promo }) {
+
+  console.log(image)
+
   return (
     <>
       <div className="max-w-sm bg-white border-4 border-orange-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 my-4 w-72 h-max">
         <a href="#" className="flex justify-center pt-4">
           <Image
-            src="/brenden.jpeg"
+            src={image}
+            // src="/brenden.jpeg"
             alt="Card's image"
             objectFit="cover"
             width={200}
             height={150}
             className="rounded"
           />
+          {/* <image></image> */}
         </a>
         <div className="p-5">
           <a href="#" className="block">
